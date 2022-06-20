@@ -1,0 +1,44 @@
+{
+    "indent": [
+        "error",
+        4
+    ],
+    "space-before-function-paren": [
+        "error",
+        {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+        }
+    ],
+    "semi": true,
+    "comma-dangle": [
+        "error",
+        "only-multiline"
+    ],
+    "no-unused-vars": [
+        "warn",
+        {
+            "vars": "all",
+            "args": "none"
+        }
+    ],
+    "operator-linebreak": [
+        "error",
+        "after"
+    ],
+    "multiline-ternary": [
+        "error",
+        "always-multiline"
+    ],
+    "no-extra-semi": "error",
+    "react/prop-types": "off",
+    "no-multiple-empty-lines": [
+        "error",
+        {
+            "max": 1,
+            "maxBOF": 0,
+            "maxEOF": 0
+        }
+    ]
+}
