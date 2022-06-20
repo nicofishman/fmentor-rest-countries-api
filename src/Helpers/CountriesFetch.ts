@@ -19,3 +19,9 @@ export const getCountriesByRegion = async (region: string): Promise<Root2[]> => 
 
     return response.data;
 };
+
+export const getCountryById = async (id: string): Promise<Root2[]> => {
+    const response = await axios.get(`https://restcountries.com/v3.1/alpha/${id}`);
+
+    return response.data;
+};

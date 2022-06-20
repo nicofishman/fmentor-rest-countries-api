@@ -1,15 +1,13 @@
 import React, { FC, useEffect } from 'react';
 
-import CountryList from '../Components/CountryList';
-import Navbar from '../Components/Navbar';
+import CountryList from '../Components/CountryIndex/CountryList';
 import Search from '../Components/Search';
 import { useThemeContext } from '../Context/ThemeContext';
 import { getCountries } from '../Helpers/CountriesFetch';
+import { Root2 } from '../Helpers/countries';
 
-import { Root2 } from './../Helpers/countries';
-
-const App: FC = () => {
-    const { isDark, countries, setCountries } = useThemeContext();
+const Index: FC = () => {
+    const { countries, setCountries } = useThemeContext();
 
     useEffect(() => {
         (async () => {
@@ -20,8 +18,7 @@ const App: FC = () => {
     }, []);
 
     return (
-        <div className={`w-full h-screen bg-white  ${isDark ? 'dark bg-dark-blue-back' : ''}`}>
-            <Navbar />
+        <div className={'w-full h-screen bg-white dark:bg-dark-blue-back'}>
             <Search />
             { countries.length &&
             <CountryList countries={countries} />
@@ -30,4 +27,4 @@ const App: FC = () => {
     );
 };
 
-export default App;
+export default Index;

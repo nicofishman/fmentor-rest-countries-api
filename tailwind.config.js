@@ -13,6 +13,12 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['Nunito Sans']
+            },
+            fontSize: {
+                xxs: '0.6rem'
+            },
+            dropShadow: {
+                custom: '0px 0px 12px 10px --tw-shadow-color'
             }
         }
     },

@@ -25,6 +25,8 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     useEffect(() => {
         const localStorageTheme = localStorage.getItem('isDark');
 
+        setInputValue('');
+        setDropdownValue('');
         if (localStorageTheme) {
             setIsDark(localStorageTheme === 'true');
         } else {
@@ -48,23 +50,12 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 setCountries(countries);
             }
-            // if (dropdownValue !== '') {
-            //     const countries: Root2[] = await getCountries();
-
-            //     setCountries(countries);
-            // } else {
-            //     if (inputValue === '') {
-            //         const countries: Root2[] = await getCountries();
-
-            //         setCountries(countries);
-            //     } else {
-            //         const countries: Root2[] = await getCountriesByName(inputValue);
-
-            //         setCountries(countries);
-            //     }
-            // }
         })();
     }, [inputValue, dropdownValue]);
+
+    useEffect(() => {
+        localStorage.setItem('isDark', isDark.toString());
+    }, [isDark]);
 
     const value: ThemeContextType = {
         isDark,
