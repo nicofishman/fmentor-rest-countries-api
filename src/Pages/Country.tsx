@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { FC, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import Back from '../Components/SingleCountry/Back';
 import { Root2 } from '../Helpers/countries';
@@ -24,7 +24,9 @@ const Country: FC = () => {
     useEffect(() => {
         if (!country) return;
         document.title = `${country.name.common}`;
+        // @ts-ignore
         setLanguages(Object.entries(country.languages as any).map(([_key, value]) => value));
+        // @ts-ignore
         setCurrencies(Object.entries(country.currencies as any).map(([_key, value]) => value.name).join(', '));
         if (!country.name.nativeName) return;
         setNativeNames(Object.entries(country.name.nativeName).map(([key, value]) => ({ language: key, name: value })));
